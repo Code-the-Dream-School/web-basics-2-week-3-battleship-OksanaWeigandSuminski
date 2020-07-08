@@ -36,6 +36,9 @@ const battleship = () => {
     const playerOne = getCoordinates(player1)
     const playerTwo = getCoordinates(player2)
   }
+  for(let i = 0; i < player1.gameBoard.length; i++) {  
+    console.log(player1.gameBoard[i].toString());  
+    }
   while (player1.shipCount > 0 && player2.shipCount > 0) {
     //player1 turn
     let player1Xposition = prompt(`${player1.name}, enter the x coordinate for your attack`);
@@ -48,7 +51,7 @@ const battleship = () => {
       alert('Miss!')
     }
     if (player2.shipCount === 0) {
-      console.log(`The winner is player ${player1.name}!`)
+      return(`The winner is player ${player1.name}!`)
     }
     //player2 turn
     let player2Xposition = prompt(`${player2.name}, enter the x coordinate for your attack`);
@@ -61,7 +64,7 @@ const battleship = () => {
       alert('Miss!')
     }
     if (player1.shipCount === 0) {
-      console.log(`The winner is player ${player2.name}!`)
+      return(`The winner is player ${player2.name}!`)
     }
   }
 }
